@@ -1,7 +1,9 @@
 * {
   margin: 0;
   font-family: Arial, sans-serif;
+  box-sizing: inherit;
 }
+
 
 .navbar {
   z-index: 9999;
@@ -38,7 +40,7 @@
   color: white;
   padding: 14px 20px;
   background-color: black;
-  margin: 0;
+  z-index: 0;
   cursor: pointer;
 }
 .dropdown .drop-btn:hover{
@@ -81,8 +83,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0px;
-  margin-top: -3px;
 }
 .navbar i:hover{
   background-color: rgb(255, 44, 44);
@@ -127,10 +127,9 @@
 }
 
 .band-members-images {
-  background-color: rgba(255, 255, 255, 0.288);
-  width: 100%;
-  height: 300px;
-  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 :root {
@@ -149,12 +148,11 @@
 
 /* Members */
 .amir-eid, .shrief, .tamer{
-  width: 80%;
+  width: calc(80% / 3);
   height: var(--main-avatar-height);
   display: inline-block;
   width:30%;
   text-align: center;
-  padding-left: 30px;
 }
 .band-members-images h3{
   color: var(--members-font-color);
@@ -181,59 +179,69 @@
 }
 .section-3 .sec-3 h6 {
   font-style:italic;
-  padding:10px 0px;
+  padding:10px 0px 30px 0px;
   text-align: center;
   font-size: 12px;
   letter-spacing: 1px;
   color: #9c9c9c;
 }
 .tickets-box {
-  margin: 40px 0px 0px 260px;
-  display: grid;
+  display: flex;
   background-color: white;
-  width: 750px;
-  height: 130px;
+  width: 60%;
+  flex-direction: column;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
+
 .tickets-box div {
+  padding: 10px;
   border-bottom: #bcbcbc solid 1px;
   text-align: left;
-  padding-top: 10px;
-  padding-left: 10px;
 }
 .tickets-box div span {
+  margin-left: 10px;
   background-color: rgb(246, 67, 67);
   color: white;
   padding: 4px;
   font-size: 15px;
-  margin-left: 10px;
 }
 .tickets-box div #span-3 {
   display: inline;
-  margin-left: 620px;
-  margin-top: 5px;
   background-color: black;
   color: white;
   font-size: 15px;
   padding-right:8px;
   border-radius: 100%;
+  float: right;
 }
+
 .cities-box {
   display: flex;
+  width: 99%;
+  padding: 5px;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 200px;
+  
 }
-.cairo-card, .alex-card, .al3alamen-card {
-  display: inline-block;
+.cities-box .cairo-card,
+.cities-box .alex-card,
+.cities-box .al3alamen-card
+{
   background-color: white;
-  width: 230px;
-  height: 335px;
-  margin: 0px 0px 0px 25px ;
+  width: calc(60% / 3);
+  height: 350px;
 }
 .cities-box img {
     width: 100%;
-    height: 45%;
+    height: 43%;
 }
-.cities-box {
-  margin: 20px 0px 0px 235px ;
-}
+
+
 .cities-box button {
   border: none;
   background-color: #000000;
@@ -241,12 +249,21 @@
   padding: 10px;
   cursor: pointer;
   font-size: 15px;
+  margin-left: 10px;
+  width: 100px;
 }
 .cities-box button:hover {
   background-color: #bdbdbd;
   color: #000000;
 }
-
+.alex-card .alex-elemnts,
+.cairo-card .cairo-elemnts,
+.al3alamen-card .al3alamen-elemnts{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 55%;
+}
 .cairo-elemnts b,.alex-elemnts b, .al3alamen-elemnts b {
 padding-left: 10px;
 text-transform:uppercase;
@@ -254,26 +271,34 @@ text-transform:uppercase;
 .cairo-elemnts .time,.alex-elemnts .time, .al3alamen-elemnts .time {
 color: #606060;
 padding-left: 10px;
-margin-top: 15px;
 text-transform:inherit;
 font-size: 13px;
 }
 .cairo-elemnts .para-p, .alex-elemnts .para-p, .al3alamen-elemnts .para-p {
 padding-left: 10px;
-margin-top: 30px;
 font-size: 15px;
 }
-.cities-box button {
-  margin-top: 20px;
-  margin-left: 10px;
-}
+
 .section-4 {
-  display: inline-block;
-  width: 100%;
+  width: 99%;
   height: 450px;
   background-color: #ffffff;
 }
-.sec-4 h1{
+.section-4 .sec-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5%;
+  
+}
+.section-4 .sec-4 .info{
+  width: calc(80% / 4);
+  
+}
+
+
+
+.section-4 h1{
   font-size: 30px;
   letter-spacing: 4px;
   text-align: center;
@@ -281,7 +306,7 @@ font-size: 15px;
   font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 400;
 }
-.sec-4 p{
+.section-4  p{
   font-size: 13px;
   font-style: italic;
   font-weight: 400;
@@ -293,15 +318,11 @@ font-size: 15px;
 .info i {
   font-size: 16px;
 }
-.sec-4 .info{
-  margin-left: 200px;
-  margin-top: 60px;
-}
+
 .sec-4 .location,
 .sec-4 .tele,
 .sec-4 .mail{
   font-size: 18px;
-  margin-left: 50px;
   padding-bottom: 5px;
 }
 .sec-4 span{
@@ -310,39 +331,30 @@ font-size: 15px;
 .sec-4 .location span{
   padding-left: 13px;
 }
-.contact-form {
-  width: 500px;
-  height: 150px;
-  margin-left: 46%;
-  margin-top:-100px ;
-}
+
 .contact-form #name,
 .contact-form #email{
-  width: 200px;
+  width: 48%;
   height: 30px;
-  margin-left: 26px;
-  margin-top: 15px;
   border: solid 1px gray;
   border-radius: 3px;
-
 }
+
 .contact-form #text{
-  width: 435px;
+  width: 410.5px;
   height: 30px;
-  margin-left: 26px;
-  margin-top: 13px;
   border: none;
   border-radius: 3px;
   border: solid 1px gray;
+  margin-top: 3%;
 }
 .contact-form #submit-btn {
   float: right;
-  margin-right: 35px;
-  margin-top: 8px;
   width: 65px;
   height: 35px;
   cursor: pointer;
   border: none;
+  margin-top: 3%;
   border-radius: 3px;
   background-color: #000000;
   color: white;
@@ -360,19 +372,22 @@ font-size: 15px;
   filter: grayscale(50%);
 }
 footer {
+  display: flex;
   width: 100%;
   min-height: 190px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.icons {
-  margin-left: 43.8%;
-  margin-top: 80px;
+
+.icons {  
   font-size: 22px;
   color: #000000ad;
 }
 .icons i:hover {
   color: #00000068;
 }
-footer h4 {
+h4 {
   text-align: center;
   padding: 20px;
   font-size: 15px;
