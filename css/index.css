@@ -69,6 +69,8 @@
 .dropdown-content a:hover {
   background-color: #cbcbcb;
   color: rgb(0, 0, 0);
+  padding-left: 20px;
+  transition: 0.2s;
 }
 
 .dropdown:hover .dropdown-content{
