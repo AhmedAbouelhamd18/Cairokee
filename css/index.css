@@ -68,7 +68,7 @@
 }
 .dropdown-content a:hover {
   background-color: #cbcbcb;
-  color: rgb(0, 0, 0);
+  color: black;
   padding-left: 20px;
   transition: 0.2s;
 }
@@ -149,7 +149,7 @@
 }
 
 /* Members */
-.amir-eid, .shrief, .tamer{
+.members{
   width: calc(80% / 3);
   height: var(--main-avatar-height);
   display: inline-block;
